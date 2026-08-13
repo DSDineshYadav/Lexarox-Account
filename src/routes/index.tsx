@@ -111,8 +111,8 @@ function Dashboard() {
               <Zap className="h-3.5 w-3.5 text-[#3cadf1] animate-pulse" />
               <span>CRM & Accounting Operations Platform</span>
             </div> */}
-            <h1 className="text-1xl font-black tracking-tight text-[#2c2a35] dark:text-white sm:text-3xl lg:text-3xl mb-0">
-              Welcome back, Andrea 👋
+            <h1 className="text-1xl font-[400] tracking-tight text-[#2c2a35] dark:text-white sm:text-3xl lg:text-3xl mb-0">
+              Welcome back, Andrea
             </h1>
             <p className="text-sm text-slate-700 dark:text-slate-200 sm:text-[14px] leading-relaxed font-medium">
               You have <span className="font-extrabold text-[#0284c7] dark:text-[#3cadf1] dark:bg-[#3cadf1]/25">18 pending items</span> in your review queue and <span className="font-extrabold text-[#2a8323] dark:text-[#6fdb65]">126 automated actions</span> completed today.
@@ -126,7 +126,7 @@ function Dashboard() {
                   key={range}
                   onClick={() => setTimeRange(range)}
                   className={`rounded-lg px-3.5 py-1.5 transition-all ${timeRange === range
-                    ? "bg-[#007978] text-white shadow-md font-bold"
+                    ? "bg-[#3caff2] text-white shadow-md font-bold"
                     : "hover:text-slate-900 dark:hover:text-white"
                     }`}
                 >
@@ -475,55 +475,10 @@ function Dashboard() {
       {/* 4. CRM Pipeline Velocity Bar Chart & AI System Performance */}
       <div className="mt-6 grid gap-6 lg:grid-cols-3">
 
-        {/* AI Autonomous Monitor */}
-        <div className="card-soft p-5 flex flex-col justify-between lg:col-span-2 ">
-          <div>
-            <div className="flex items-center justify-between border-b pb-4">
-              <div>
-                <h2 className="text-base font-bold flex items-center gap-2">
-                  <Sparkles className="h-4 w-4 text-[var(--ai)]" />
-                  AI Autonomous Agents
-                </h2>
-                <p className="text-xs text-muted-foreground">Active agents running background tasks</p>
-              </div>
-              <Button variant="ghost" size="sm" className="h-8 text-xs font-semibold" asChild>
-                <Link to="/ai-workspace">View All</Link>
-              </Button>
-            </div>
 
-            <div className="mt-4 space-y-3">
-              {agents.slice(0, 4).map((agent) => (
-                <div key={agent.id} className="flex items-start gap-3 rounded-xl border p-3 bg-card/60 hover:bg-card transition-colors">
-                  <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[var(--ai)]/10 text-[var(--ai)]">
-                    <Activity className="h-4 w-4" />
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center justify-between">
-                      <p className="text-xs font-bold">{agent.name}</p>
-                      <StatusBadge tone={agent.status === "Active" ? "success" : "warning"} className="text-[10px] px-2 py-0">
-                        {agent.status}
-                      </StatusBadge>
-                    </div>
-                    <p className="mt-1 truncate text-xs text-muted-foreground">{agent.current}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-4 rounded-xl bg-gradient-to-r from-cyan-500/10 to-indigo-500/10 p-3 border border-cyan-500/20 flex items-center justify-between">
-            <div className="flex items-center gap-2 text-xs">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-              <span className="font-semibold">All 6 agents operating smoothly</span>
-            </div>
-            <Link to="/ai-workspace" className="text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline flex items-center">
-              Logs <ArrowUpRight className="h-3 w-3 ml-0.5" />
-            </Link>
-          </div>
-        </div>
 
         {/* Pipeline Stage Velocity Bar Chart */}
-        <div className="card-soft p-5 flex flex-col justify-between rounded-2xl border bg-card shadow-sm hover:shadow-md transition-all">
+        <div className="card-soft p-5 flex flex-col justify-between rounded-2xl border bg-card shadow-sm hover:shadow-md transition-all lg:col-span-2">
           <div>
             <div className="flex items-center justify-between border-b pb-3">
               <div>
@@ -590,6 +545,53 @@ function Dashboard() {
               <span className="block text-[10px] font-extrabold text-muted-foreground uppercase tracking-wider">SLA Target</span>
               <span className="text-xs font-black text-[#a855f7]">98.4% <span className="text-[9px] text-[#2a8323] dark:text-[#6fdb65] font-extrabold">On-Track</span></span>
             </div>
+          </div>
+        </div>
+
+        {/* AI Autonomous Monitor */}
+        <div className="card-soft p-5 flex flex-col justify-between ">
+          <div>
+            <div className="flex items-center justify-between border-b pb-4">
+              <div>
+                <h2 className="text-base font-bold flex items-center gap-2">
+                  <Sparkles className="h-4 w-4 text-[var(--ai)]" />
+                  AI Autonomous Agents
+                </h2>
+                <p className="text-xs text-muted-foreground">Active agents running background tasks</p>
+              </div>
+              <Button variant="ghost" size="sm" className="h-8 text-xs font-semibold" asChild>
+                <Link to="/ai-workspace">View All</Link>
+              </Button>
+            </div>
+
+            <div className="mt-4 space-y-3">
+              {agents.slice(0, 4).map((agent) => (
+                <div key={agent.id} className="flex items-start gap-3 rounded-xl border p-3 bg-card/60 hover:bg-card transition-colors">
+                  <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-[var(--ai)]/10 text-[var(--ai)]">
+                    <Activity className="h-4 w-4" />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between">
+                      <p className="text-xs font-bold">{agent.name}</p>
+                      <StatusBadge tone={agent.status === "Active" ? "success" : "warning"} className="text-[10px] px-2 py-0">
+                        {agent.status}
+                      </StatusBadge>
+                    </div>
+                    <p className="mt-1 truncate text-xs text-muted-foreground">{agent.current}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-4 rounded-xl bg-gradient-to-r from-cyan-500/10 to-indigo-500/10 p-3 border border-cyan-500/20 flex items-center justify-between">
+            <div className="flex items-center gap-2 text-xs">
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+              <span className="font-semibold">All 6 agents operating smoothly</span>
+            </div>
+            <Link to="/ai-workspace" className="text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline flex items-center">
+              Logs <ArrowUpRight className="h-3 w-3 ml-0.5" />
+            </Link>
           </div>
         </div>
 

@@ -154,7 +154,7 @@ export function KpiCard({
   return (
     <div className={cn("card-soft card-hover flex flex-col justify-between gap-3 p-4 border rounded-2xl transition-all duration-200", style.card)}>
       <div className="flex items-center justify-between gap-2">
-        <span className={cn("truncate text-[11px] font-extrabold uppercase tracking-wider", style.label)}>
+        <span className={cn("truncate text-xs font-extrabold uppercase tracking-wider", style.label)}>
           {label}
         </span>
         <span className={cn("grid h-9 w-9 shrink-0 place-items-center rounded-xl transition-colors font-bold", style.icon)}>
@@ -163,13 +163,13 @@ export function KpiCard({
       </div>
       <div>
         <div className="flex items-baseline gap-2">
-          <span className={cn("text-3xl font-black tracking-tight", style.value)}>{value}</span>
+          <span className={cn("text-2xl sm:text-3xl font-black tracking-tight", style.value)}>{value}</span>
           <span className={cn("inline-flex items-center gap-0.5 rounded-full px-2 py-0.5 text-xs font-bold", style.trend)}>
             {up ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
             {trend}
           </span>
         </div>
-        <p className={cn("mt-1 text-xs font-semibold", style.support)}>{support}</p>
+        <p className={cn("mt-1 text-xs font-medium", style.support)}>{support}</p>
       </div>
     </div>
   );
