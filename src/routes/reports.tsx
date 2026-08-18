@@ -191,11 +191,11 @@ function Reports() {
                 <YAxis tick={{ fontSize: 11, fill: "#94a3b8" }} axisLine={false} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "#1e1c26",
-                    borderColor: "#3d3949",
+                    backgroundColor: "#ffffff",
+                    borderColor: "#e2e8f0",
                     borderRadius: "12px",
-                    color: "#fff",
-                    boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
+                    color: "#0f172a",
+                    boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
                   }}
                 />
                 <Area type="monotone" dataKey="clients" stroke="#3cadf1" strokeWidth={3} fillOpacity={1} fill="url(#clientGrad)" name="Active Clients" />
@@ -226,10 +226,11 @@ function Reports() {
                   </Pie>
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "#1e1c26",
-                      borderColor: "#3d3949",
+                      backgroundColor: "#ffffff",
+                      borderColor: "#e2e8f0",
                       borderRadius: "12px",
-                      color: "#fff",
+                      color: "#0f172a",
+                      boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
                     }}
                   />
                 </PieChart>
@@ -259,10 +260,11 @@ function Reports() {
                 <YAxis tick={{ fontSize: 11, fill: "#94a3b8" }} axisLine={false} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "#1e1c26",
-                    borderColor: "#3d3949",
+                    backgroundColor: "#ffffff",
+                    borderColor: "#e2e8f0",
                     borderRadius: "12px",
-                    color: "#fff",
+                    color: "#0f172a",
+                    boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
                   }}
                 />
                 <Legend wrapperStyle={{ fontSize: 11, paddingTop: 10 }} />
@@ -283,10 +285,11 @@ function Reports() {
                 <YAxis dataKey="name" type="category" tick={{ fontSize: 11, fill: "#94a3b8" }} axisLine={false} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "#1e1c26",
-                    borderColor: "#3d3949",
+                    backgroundColor: "#ffffff",
+                    borderColor: "#e2e8f0",
                     borderRadius: "12px",
-                    color: "#fff",
+                    color: "#0f172a",
+                    boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
                   }}
                 />
                 <Bar dataKey="capacity" fill="#8b5cf6" radius={[0, 4, 4, 0]} name="Capacity Load (%)" />

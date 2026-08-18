@@ -295,8 +295,8 @@ function Dashboard() {
                     content={({ active, payload, label }) => {
                       if (active && payload && payload.length) {
                         return (
-                          <div className="rounded-xl border border-[#3cadf1]/30 bg-slate-950/95 p-3 text-white shadow-2xl backdrop-blur-md text-xs">
-                            <p className="font-extrabold text-[#3cadf1] border-b border-white/10 pb-1 mb-2">
+                          <div className="rounded-xl border border-slate-200 bg-white/95 p-3 text-slate-900 shadow-2xl backdrop-blur-md text-xs">
+                            <p className="font-extrabold text-[#0284c7] border-b border-slate-100 pb-1 mb-2">
                               {label} Performance
                             </p>
                             <div className="space-y-1.5">
@@ -306,7 +306,7 @@ function Dashboard() {
                                     <span className="h-2 w-2 rounded-full" style={{ backgroundColor: entry.color }} />
                                     {entry.name}
                                   </span>
-                                  <span className="font-black text-white">
+                                  <span className="font-black text-slate-900">
                                     {entry.name.includes("Revenue") ? `£${entry.value.toLocaleString()}` : entry.value}
                                   </span>
                                 </div>
@@ -412,7 +412,7 @@ function Dashboard() {
                       if (active && payload && payload.length && payload[0] && payload[0].payload) {
                         const data = payload[0];
                         return (
-                          <div className="rounded-xl border border-white/10 bg-slate-950/95 p-2 px-3 text-white shadow-xl backdrop-blur-md text-xs font-bold pointer-events-none">
+                          <div className="rounded-xl border border-slate-200 bg-white/95 p-2 px-3 text-slate-900 shadow-xl backdrop-blur-md text-xs font-bold pointer-events-none">
                             <span className="flex items-center gap-1.5" style={{ color: data.payload.color }}>
                               <span className="h-2 w-2 rounded-full" style={{ backgroundColor: data.payload.color }} />
                               {data.name}: {data.value} clients
@@ -508,8 +508,8 @@ function Dashboard() {
                       if (active && payload && payload.length && payload[0] && payload[0].payload) {
                         const data = payload[0];
                         return (
-                          <div className="rounded-xl border border-white/10 bg-slate-950/95 p-2.5 px-3.5 text-white shadow-xl backdrop-blur-md text-xs font-bold">
-                            <span className="text-[#3cadf1]">{data.payload.stage}:</span> {data.value} clients ({data.payload.conversion} conversion)
+                          <div className="rounded-xl border border-slate-200 bg-white/95 p-2.5 px-3.5 text-slate-900 shadow-xl backdrop-blur-md text-xs font-bold">
+                            <span className="text-[#0284c7]">{data.payload.stage}:</span> {data.value} clients ({data.payload.conversion} conversion)
                           </div>
                         );
                       }
