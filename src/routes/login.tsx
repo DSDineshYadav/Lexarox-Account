@@ -43,7 +43,7 @@ function Login() {
         className="pointer-events-none absolute -right-20 bottom-10 h-80 w-80 rounded-full bg-[#50b546]/10 blur-3xl"
       />
 
-      <div className="animate-in fade-in slide-in-from-bottom-4 relative z-10 w-[94vw] max-w-[1180px] duration-700">
+      <div className="animate-in fade-in slide-in-from-bottom-4 relative z-10 w-[94vw] max-w-[1280px] duration-700">
         <div className="overflow-hidden rounded-[1.35rem] bg-background shadow-[0_24px_60px_-12px_rgba(15,23,42,0.18),0_0_0_1px_rgba(255,255,255,0.6)_inset] lg:grid lg:h-[86vh] lg:min-h-[560px] lg:max-h-[900px] lg:grid-cols-[1.08fr_1fr]">
           {/* Left — hero panel */}
           <div className="relative hidden h-full min-h-0 overflow-hidden lg:block">
@@ -52,7 +52,7 @@ function Login() {
               alt="Professional using LexaRox Accounts on mobile"
               className="absolute inset-0 h-full w-full scale-[1.02] object-cover object-[center_20%]"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-[#3cadf1]/90 via-[#2f8fd4]/75 to-[#1a1824]/92" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#000]/90 via-[#2f8fd4]/0 to-[#1a1824]/92" />
             <div
               aria-hidden
               className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.65)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.65)_1px,transparent_1px)] [background-size:28px_28px]"
@@ -107,7 +107,7 @@ function Login() {
             </div>
 
             <img
-              src="/login-logo.png"
+              src="/logo_black.png"
               alt="LexaRox Accounts"
               className="h-[3.25rem] w-auto object-contain object-left"
             />
@@ -123,7 +123,7 @@ function Login() {
               className="mt-7"
               onSubmit={(e) => {
                 e.preventDefault();
-                window.location.href = "/";
+                window.location.href = "/dashboard";
               }}
             >
               <div
@@ -221,7 +221,7 @@ function Login() {
               <p className="text-center text-sm text-muted-foreground">
                 Prototype access —{" "}
                 <Link
-                  to="/"
+                  to="/dashboard"
                   className="font-semibold text-[#3cadf1] underline-offset-4 transition-colors hover:text-[#2f97d8] hover:underline"
                 >
                   continue to the dashboard

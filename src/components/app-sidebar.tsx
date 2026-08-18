@@ -30,7 +30,7 @@ import {
 } from "@/components/ui/sidebar";
 
 const main = [
-  { title: "Dashboard", url: "/", icon: LayoutDashboard },
+  { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
   { title: "Clients", url: "/clients", icon: Users },
   { title: "Onboarding", url: "/onboarding", icon: UserPlus },
   { title: "Documents", url: "/documents", icon: FileText },
@@ -56,7 +56,7 @@ export function AppSidebar() {
   const pathname = useRouterState({ select: (r) => r.location.pathname });
 
   const isActive = (url: string) =>
-    url === "/" ? pathname === "/" : pathname.startsWith(url);
+    url === "/dashboard" ? pathname === "/dashboard" : pathname.startsWith(url);
 
   const renderGroup = (
     label: string,
@@ -100,7 +100,7 @@ export function AppSidebar() {
       className="border-r border-[#3d3949] bg-[linear-gradient(180deg,#2c2a35_0%,#1e1c26_60%,#14121a_100%)] text-white shadow-2xl"
     >
       <SidebarHeader className="px-3 py-4">
-        <Link to="/" className="flex min-w-0 items-center gap-2">
+        <Link to="/dashboard" className="flex min-w-0 items-center gap-2">
           {collapsed ? (
             <div className="">
               <img src="/favicon.png" alt="LexaRox" className="h-6 w-6" />

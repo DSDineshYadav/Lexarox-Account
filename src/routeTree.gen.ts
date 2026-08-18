@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AiReviewRouteImport } from './routes/ai-review'
 import { Route as AiWorkspaceRouteImport } from './routes/ai-workspace'
 import { Route as CommunicationsRouteImport } from './routes/communications'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
@@ -43,6 +44,11 @@ const AiWorkspaceRoute = AiWorkspaceRouteImport.update({
 const CommunicationsRoute = CommunicationsRouteImport.update({
   id: '/communications',
   path: '/communications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InsightsRoute = InsightsRouteImport.update({
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/ai-review': typeof AiReviewRoute
   '/ai-workspace': typeof AiWorkspaceRoute
   '/communications': typeof CommunicationsRoute
+  '/dashboard': typeof DashboardRoute
   '/insights': typeof InsightsRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
@@ -123,6 +130,7 @@ export interface FileRoutesByTo {
   '/ai-review': typeof AiReviewRoute
   '/ai-workspace': typeof AiWorkspaceRoute
   '/communications': typeof CommunicationsRoute
+  '/dashboard': typeof DashboardRoute
   '/insights': typeof InsightsRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
@@ -141,6 +149,7 @@ export interface FileRoutesById {
   '/ai-review': typeof AiReviewRoute
   '/ai-workspace': typeof AiWorkspaceRoute
   '/communications': typeof CommunicationsRoute
+  '/dashboard': typeof DashboardRoute
   '/insights': typeof InsightsRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
@@ -160,6 +169,7 @@ export interface FileRouteTypes {
     | '/ai-review'
     | '/ai-workspace'
     | '/communications'
+    | '/dashboard'
     | '/insights'
     | '/login'
     | '/onboarding'
@@ -177,6 +187,7 @@ export interface FileRouteTypes {
     | '/ai-review'
     | '/ai-workspace'
     | '/communications'
+    | '/dashboard'
     | '/insights'
     | '/login'
     | '/onboarding'
@@ -194,6 +205,7 @@ export interface FileRouteTypes {
     | '/ai-review'
     | '/ai-workspace'
     | '/communications'
+    | '/dashboard'
     | '/insights'
     | '/login'
     | '/onboarding'
@@ -212,6 +224,7 @@ export interface RootRouteChildren {
   AiReviewRoute: typeof AiReviewRoute
   AiWorkspaceRoute: typeof AiWorkspaceRoute
   CommunicationsRoute: typeof CommunicationsRoute
+  DashboardRoute: typeof DashboardRoute
   InsightsRoute: typeof InsightsRoute
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
@@ -253,6 +266,13 @@ declare module '@tanstack/react-router' {
       path: '/communications'
       fullPath: '/communications'
       preLoaderRoute: typeof CommunicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/insights': {
@@ -340,6 +360,7 @@ const rootRouteChildren: RootRouteChildren = {
   AiReviewRoute: AiReviewRoute,
   AiWorkspaceRoute: AiWorkspaceRoute,
   CommunicationsRoute: CommunicationsRoute,
+  DashboardRoute: DashboardRoute,
   InsightsRoute: InsightsRoute,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
